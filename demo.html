@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Free Demo — Awake Leads</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1a1a2e;background:#f8f5ff}
+nav{background:#0d0d1a;padding:18px 48px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:900;color:#fff}
+.logo span{color:#7c3aed}
+.back{color:rgba(255,255,255,.6);font-size:.9rem}
+.back:hover{color:#fff}
+.hero{background:linear-gradient(135deg,#0d0d1a,#2d1060);color:#fff;padding:60px 24px;text-align:center}
+.hero h1{font-size:2rem;font-weight:800;margin-bottom:12px}
+.hero p{opacity:.8;max-width:500px;margin:0 auto}
+.form-wrap{max-width:540px;margin:-30px auto 40px;background:#fff;border-radius:16px;padding:36px 32px;box-shadow:0 20px 60px rgba(0,0,0,.12);position:relative;z-index:10}
+.form-wrap h2{font-size:1.3rem;font-weight:700;margin-bottom:6px}
+.form-wrap .sub{color:#666;font-size:.9rem;margin-bottom:24px}
+.form-group{margin-bottom:16px}
+label{display:block;font-weight:600;font-size:.85rem;margin-bottom:5px;color:#444}
+input,select,textarea{width:100%;padding:11px 14px;border:2px solid #e8e8e8;border-radius:8px;font-size:.95rem;color:#1a1a2e;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#7c3aed}
+textarea{resize:vertical;min-height:80px}
+.btn{width:100%;padding:15px;background:#7c3aed;color:#fff;border:none;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;transition:background .2s}
+.btn:hover{background:#6d28d9}
+.disclaimer{font-size:.75rem;color:#999;text-align:center;margin-top:12px}
+.success{display:none;text-align:center;padding:40px 20px}
+.success .icon{font-size:3rem;margin-bottom:16px}
+.success h2{font-size:1.5rem;margin-bottom:8px}
+.success p{color:#666}
+.what{max-width:540px;margin:0 auto 40px;padding:0 20px}
+.what h3{font-size:1.05rem;font-weight:700;margin-bottom:16px}
+.what-item{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+.what-check{background:#7c3aed;color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;margin-top:1px}
+.what-text h4{font-size:.95rem;font-weight:700;margin-bottom:2px}
+.what-text p{font-size:.85rem;color:#666}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Awake<span>Leads</span></div>
+  <a href="/" class="back">← Back</a>
+</nav>
+<div class="hero">
+  <h1>Book Your Free 15-Minute Demo</h1>
+  <p>We'll show you the AI in action — live — having a real conversation with a cold lead. See exactly how it works before committing to anything.</p>
+</div>
+<div class="form-wrap">
+  <div id="formSection">
+    <h2>Tell us about your business</h2>
+    <p class="sub">We'll reach out to schedule your Zoom demo.</p>
+    <form id="demoForm">
+      <div class="form-group">
+        <label>Your Name *</label>
+        <input type="text" name="firstName" required placeholder="Peter">
+      </div>
+      <div class="form-group">
+        <label>Company Name *</label>
+        <input type="text" name="companyName" required placeholder="Smith HVAC Services">
+      </div>
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email" name="email" required placeholder="peter@company.com">
+      </div>
+      <div class="form-group">
+        <label>Phone *</label>
+        <input type="tel" name="phone" required placeholder="(704) 555-0000">
+      </div>
+      <div class="form-group">
+        <label>Industry</label>
+        <select name="industry">
+          <option value="">Select your industry...</option>
+          <option>HVAC</option>
+          <option>Solar</option>
+          <option>Roofing</option>
+          <option>Insurance</option>
+          <option>Mortgage / Finance</option>
+          <option>Legal</option>
+          <option>Real Estate</option>
+          <option>Home Services</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>How many old leads are in your database? (rough estimate)</label>
+        <select name="dbSize">
+          <option value="">Select...</option>
+          <option>Under 500</option>
+          <option>500–2,000</option>
+          <option>2,000–10,000</option>
+          <option>10,000+</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <button type="submit" class="btn" id="submitBtn">Book My Free Demo →</button>
+      <p class="disclaimer">No sales pressure. 15 minutes. We show you the AI live.</p>
+    </form>
+  </div>
+  <div class="success" id="successSection">
+    <div class="icon">✅</div>
+    <h2>You're booked in!</h2>
+    <p>Peter will reach out to <strong id="successEmail"></strong> within a few hours to confirm your demo time.</p>
+    <p style="margin-top:12px;color:#999;font-size:.85rem">Questions? Email peter@awakeleads.com</p>
+  </div>
+</div>
+<div class="what">
+  <h3>What happens on the demo:</h3>
+  <div class="what-item">
+    <div class="what-check">1</div>
+    <div class="what-text"><h4>We show you the AI live</h4><p>You'll watch it text a "cold lead" in real time, handle questions, and overcome objections — exactly as it would with your leads.</p></div>
+  </div>
+  <div class="what-item">
+    <div class="what-check">2</div>
+    <div class="what-text"><h4>We look at your numbers</h4><p>How many dead leads do you have? What's a booked call worth to you? We'll walk through the math together.</p></div>
+  </div>
+  <div class="what-item">
+    <div class="what-check">3</div>
+    <div class="what-text"><h4>You decide</h4><p>No pressure, no hard close. If it makes sense for you, we'll talk next steps. If not, you leave with a great understanding of AI lead reactivation.</p></div>
+  </div>
+</div>
+<script>
+document.getElementById('demoForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+  const data = Object.fromEntries(new FormData(this));
+  try {
+    await fetch('https://services.leadconnectorhq.com/contacts/', {
+      method: 'POST', mode: 'cors',
+      headers: {'Authorization':'Bearer pit-aa4ee3a6-d34d-40cd-987a-de6ed2782aa0','Version':'2021-07-28','Content-Type':'application/json'},
+      body: JSON.stringify({
+        locationId:'esjNWGHTWM8ZR7PyoAA1',
+        firstName: data.firstName, email: data.email, phone: data.phone,
+        companyName: data.companyName,
+        tags: ['demo-request','awake-leads','website-lead'],
+        source: `Awake Leads Demo Request | ${data.industry || 'Unknown'} | DB: ${data.dbSize || 'Unknown'}`
+      })
+    });
+  } catch(err) { console.error(err); }
+  document.getElementById('successEmail').textContent = data.email;
+  document.getElementById('formSection').style.display = 'none';
+  document.getElementById('successSection').style.display = 'block';
+});
+</script>
+</body>
+</html>
