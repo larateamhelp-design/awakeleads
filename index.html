@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Awake Leads — We Turn Your Dead Leads Into Booked Sales Calls</title>
+<title>Awake Leads — Turn Your Dead Leads Into Booked Calls</title>
 <meta name="description" content="Your old leads aren't dead. They're sleeping. We use AI to wake them up and book them into your calendar — you only pay when it works.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -13,278 +13,354 @@ a{text-decoration:none;color:inherit}
 
 /* NAV */
 nav{background:#0d0d1a;padding:12px 48px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(124,58,237,.2)}
-.logo{font-size:22px;font-weight:900;color:#fff;letter-spacing:-0.5px}
-.logo span{color:#7c3aed}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{color:#fff;font-size:15px;font-weight:700;transition:color .2s}
+.nav-links a:hover{color:#c084fc}
 .nav-cta{background:#7c3aed;color:#fff;padding:10px 24px;border-radius:6px;font-weight:700;font-size:15px;transition:background .2s}
 .nav-cta:hover{background:#6d28d9}
-.nav-links{display:flex;gap:32px;align-items:center}
-.nav-links a{color:#fff;font-size:16px;font-weight:700;transition:color .2s;letter-spacing:-0.2px}
-.nav-links a:hover{color:#c084fc}
-@media(max-width:768px){.nav-links{display:none}}
+@media(max-width:768px){.nav-links{display:none}nav{padding:12px 20px}}
 
 /* HERO */
-.hero{background:linear-gradient(135deg,#0d0d1a 0%,#1a0533 60%,#2d1060 100%);color:#fff;text-align:center;padding:90px 24px 80px}
+.hero{background:linear-gradient(135deg,#0d0d1a 0%,#1a0533 60%,#2d1060 100%);color:#fff;padding:80px 24px 70px;display:flex;align-items:center;justify-content:center;gap:60px;flex-wrap:wrap}
+.hero-left{max-width:540px}
 .hero-badge{display:inline-block;background:rgba(124,58,237,.25);border:1px solid rgba(124,58,237,.5);color:#c4b5fd;border-radius:20px;padding:6px 18px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
-.hero h1{font-size:3rem;font-weight:900;line-height:1.1;margin-bottom:20px;max-width:800px;margin-left:auto;margin-right:auto}
+.hero h1{font-size:2.8rem;font-weight:900;line-height:1.1;margin-bottom:20px}
 .hero h1 span{color:#c084fc}
-.hero p{font-size:1.2rem;opacity:.85;max-width:580px;margin:0 auto 36px;line-height:1.6}
-.hero-cta{display:inline-block;background:#7c3aed;color:#fff;padding:18px 42px;border-radius:10px;font-size:1.1rem;font-weight:700;transition:background .2s;margin-bottom:16px}
+.hero p{font-size:1.1rem;opacity:.85;margin-bottom:32px;line-height:1.6}
+.hero-cta{display:inline-block;background:#7c3aed;color:#fff;padding:16px 38px;border-radius:10px;font-size:1rem;font-weight:700;transition:background .2s;margin-bottom:12px}
 .hero-cta:hover{background:#6d28d9}
-.hero-sub{font-size:.9rem;opacity:.6;margin-top:12px}
-.hero-stats{display:flex;justify-content:center;gap:48px;margin-top:56px;flex-wrap:wrap}
-.stat{text-align:center}
-.stat-num{font-size:2.2rem;font-weight:900;color:#c084fc}
-.stat-label{font-size:.85rem;opacity:.7;margin-top:4px}
+.hero-sub{font-size:.85rem;opacity:.6;margin-top:8px}
+.hero-stats{display:flex;gap:32px;margin-top:40px;flex-wrap:wrap}
+.stat-num{font-size:1.8rem;font-weight:900;color:#c084fc}
+.stat-label{font-size:.8rem;opacity:.7;margin-top:2px}
 
-/* PROBLEM */
-.problem{background:#f8f5ff;padding:80px 24px;text-align:center}
-.section-label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7c3aed;margin-bottom:16px}
-.section-title{font-size:2.2rem;font-weight:800;margin-bottom:16px;max-width:700px;margin-left:auto;margin-right:auto}
-.section-sub{font-size:1.05rem;color:#555;max-width:580px;margin:0 auto 48px;line-height:1.6}
-.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:900px;margin:0 auto}
-.problem-card{background:#fff;border-radius:12px;padding:28px;text-align:left;box-shadow:0 4px 20px rgba(0,0,0,.07)}
-.problem-icon{font-size:2rem;margin-bottom:14px}
-.problem-card h3{font-size:1rem;font-weight:700;margin-bottom:8px}
-.problem-card p{font-size:.9rem;color:#666;line-height:1.5}
+/* SMS MOCKUP */
+.sms-card{background:#1a1a2e;border:1px solid rgba(124,58,237,.4);border-radius:20px;padding:24px;width:300px;flex-shrink:0;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.sms-header{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.1)}
+.sms-avatar{width:36px;height:36px;background:#7c3aed;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;color:#fff}
+.sms-name{font-size:.9rem;font-weight:700;color:#fff}
+.sms-sub{font-size:.75rem;color:rgba(255,255,255,.4)}
+.sms-bubble{margin-bottom:10px;display:flex}
+.sms-bubble.them{justify-content:flex-start}
+.sms-bubble.me{justify-content:flex-end}
+.sms-text{max-width:220px;padding:10px 14px;border-radius:16px;font-size:.82rem;line-height:1.4}
+.sms-bubble.them .sms-text{background:rgba(124,58,237,.3);color:#e9d5ff;border-bottom-left-radius:4px}
+.sms-bubble.me .sms-text{background:#7c3aed;color:#fff;border-bottom-right-radius:4px}
+.sms-result{margin-top:16px;padding:12px;background:rgba(124,58,237,.15);border-radius:10px;text-align:center;border:1px solid rgba(124,58,237,.3)}
+.sms-result-num{font-size:1.4rem;font-weight:900;color:#c084fc}
+.sms-result-label{font-size:.75rem;color:rgba(255,255,255,.6);margin-top:2px}
+
+/* TRUST BAR */
+.trust{background:#f8f5ff;padding:32px 24px;text-align:center}
+.trust-items{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.trust-item{text-align:center}
+.trust-num{font-size:1.8rem;font-weight:900;color:#7c3aed}
+.trust-label{font-size:.8rem;color:#666;margin-top:2px}
+
+/* SECTIONS */
+.section{padding:80px 24px;text-align:center}
+.section.dark{background:#0d0d1a;color:#fff}
+.section.light{background:#f8f5ff}
+.section-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7c3aed;margin-bottom:14px}
+.section.dark .section-label{color:#c084fc}
+.section-title{font-size:2rem;font-weight:800;margin-bottom:14px;max-width:680px;margin-left:auto;margin-right:auto}
+.section.dark .section-title{color:#fff}
+.section-sub{font-size:1rem;color:#666;max-width:560px;margin:0 auto 48px;line-height:1.6}
+.section.dark .section-sub{color:rgba(255,255,255,.65)}
 
 /* HOW IT WORKS */
-.how{padding:80px 24px;text-align:center}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;max-width:960px;margin:0 auto}
-.step{text-align:center;padding:32px 24px;position:relative}
-.step-num{width:52px;height:52px;background:#7c3aed;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.2rem;margin:0 auto 20px}
-.step h3{font-size:1.05rem;font-weight:700;margin-bottom:10px}
-.step p{font-size:.9rem;color:#666;line-height:1.5}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;max-width:900px;margin:0 auto}
+.step{text-align:center;padding:24px}
+.step-num{width:48px;height:48px;background:#7c3aed;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;margin:0 auto 16px}
+.step h3{font-size:1rem;font-weight:700;margin-bottom:8px}
+.step p{font-size:.88rem;color:#666;line-height:1.5}
 
-/* WHAT YOU GET */
-.offers{background:#0d0d1a;color:#fff;padding:80px 24px;text-align:center}
-.offers .section-label{color:#c084fc}
-.offers .section-title{color:#fff}
-.offers .section-sub{color:rgba(255,255,255,.7)}
-.offer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:900px;margin:0 auto}
-.offer-card{background:rgba(255,255,255,.06);border:1px solid rgba(124,58,237,.3);border-radius:14px;padding:32px;text-align:left}
-.offer-card.featured{background:rgba(124,58,237,.2);border-color:#7c3aed}
-.offer-tag{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c084fc;margin-bottom:16px}
-.offer-card h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
-.offer-card p{font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.5}
-.offer-result{margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:.9rem;color:#c084fc;font-weight:600}
+/* CASE STUDIES */
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:880px;margin:0 auto}
+.proof-card{background:#fff;border-radius:14px;padding:28px;text-align:left;box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.section.dark .proof-card{background:rgba(255,255,255,.07);border:1px solid rgba(124,58,237,.25)}
+.stars{color:#7c3aed;font-size:1rem;margin-bottom:12px}
+.proof-card p{font-size:.9rem;line-height:1.6;color:#444;margin-bottom:14px;font-style:italic}
+.section.dark .proof-card p{color:rgba(255,255,255,.75)}
+.proof-author{font-size:.82rem;font-weight:700;color:#7c3aed}
+.section.dark .proof-author{color:#c084fc}
 
-/* PROOF */
-.proof{padding:80px 24px;background:#f8f5ff;text-align:center}
-.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:900px;margin:0 auto}
-.proof-card{background:#fff;border-radius:12px;padding:28px;text-align:left;box-shadow:0 4px 20px rgba(0,0,0,.07)}
-.stars{color:#7c3aed;font-size:1.1rem;margin-bottom:12px}
-.proof-card p{font-size:.95rem;line-height:1.6;color:#333;margin-bottom:16px;font-style:italic}
-.proof-author{font-size:.85rem;font-weight:700;color:#7c3aed}
-
-/* OFFER SECTION */
-.cta-section{background:linear-gradient(135deg,#4c1d95,#7c3aed);color:#fff;padding:80px 24px;text-align:center}
-.cta-section h2{font-size:2.2rem;font-weight:900;margin-bottom:16px}
-.cta-section p{font-size:1.1rem;opacity:.85;max-width:560px;margin:0 auto 36px}
-.cta-big{display:inline-block;background:#fff;color:#7c3aed;padding:18px 48px;border-radius:10px;font-size:1.1rem;font-weight:800;transition:transform .2s}
-.cta-big:hover{transform:translateY(-2px)}
-.cta-notes{margin-top:20px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap;opacity:.8;font-size:.9rem}
-.cta-note::before{content:"✓ ";font-weight:700}
+/* CALCULATOR */
+.calc-wrap{display:flex;gap:40px;max-width:900px;margin:0 auto;flex-wrap:wrap;text-align:left}
+.calc-inputs,.calc-output{flex:1;min-width:280px}
+.calc-inputs h3{font-size:1rem;font-weight:700;margin-bottom:20px;color:#fff}
+.calc-output h3{font-size:1rem;font-weight:700;margin-bottom:20px;color:#fff}
+.calc-field{margin-bottom:18px}
+.calc-field label{display:block;font-size:.82rem;color:rgba(255,255,255,.65);margin-bottom:6px}
+.calc-field input[type=range]{width:100%;accent-color:#7c3aed}
+.calc-field .val{font-size:1rem;font-weight:700;color:#c084fc;margin-top:4px}
+.calc-result-box{background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.4);border-radius:14px;padding:24px}
+.calc-result-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:.88rem;color:rgba(255,255,255,.7)}
+.calc-result-row:last-child{border:none;padding-top:16px}
+.calc-result-row span:last-child{font-weight:700;color:#c084fc}
+.calc-big{font-size:1.8rem;font-weight:900;color:#c084fc}
+.calc-cta{display:inline-block;margin-top:20px;background:#7c3aed;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:.95rem;width:100%;text-align:center}
 
 /* FAQ */
-.faq{padding:80px 24px;max-width:720px;margin:0 auto}
-.faq-item{border-bottom:1px solid #e8e8e8;padding:24px 0}
-.faq-q{font-size:1.05rem;font-weight:700;margin-bottom:10px;cursor:pointer}
-.faq-a{font-size:.95rem;color:#555;line-height:1.6}
+.faq-list{max-width:700px;margin:0 auto;text-align:left}
+.faq-item{border-bottom:1px solid #e8e8e8;padding:22px 0}
+.faq-q{font-size:1rem;font-weight:700;margin-bottom:8px}
+.faq-a{font-size:.9rem;color:#555;line-height:1.6}
+
+/* CTA SECTION */
+.cta-section{background:linear-gradient(135deg,#4c1d95,#7c3aed);color:#fff;padding:80px 24px;text-align:center}
+.cta-section h2{font-size:2.2rem;font-weight:900;margin-bottom:14px}
+.cta-section p{font-size:1.05rem;opacity:.85;max-width:520px;margin:0 auto 32px}
+.cta-big{display:inline-block;background:#fff;color:#7c3aed;padding:18px 48px;border-radius:10px;font-size:1.05rem;font-weight:800;transition:transform .2s}
+.cta-big:hover{transform:translateY(-2px)}
+.cta-notes{margin-top:20px;display:flex;justify-content:center;gap:28px;flex-wrap:wrap;opacity:.85;font-size:.88rem}
+.cta-note::before{content:"✓ ";font-weight:700}
 
 /* FOOTER */
-footer{background:#0d0d1a;color:rgba(255,255,255,.5);text-align:center;padding:32px;font-size:.85rem}
+footer{background:#0d0d1a;color:rgba(255,255,255,.45);text-align:center;padding:32px;font-size:.82rem}
+footer img{height:40px;width:auto;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto}
 
 @media(max-width:640px){
+  .hero{padding:60px 20px 50px;text-align:center}
   .hero h1{font-size:2rem}
-  nav{padding:16px 20px}
-  .hero-stats{gap:28px}
+  .hero-stats{justify-content:center}
+  .sms-card{width:100%;max-width:320px}
+  .calc-wrap{flex-direction:column}
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="logo">
+  <div>
     <img src="logo.png" alt="Awake Leads" style="height:170px;width:auto;display:block;">
   </div>
   <div class="nav-links">
     <a href="#how">How It Works</a>
     <a href="#results">Results</a>
+    <a href="#calculator">Calculator</a>
     <a href="#faq">FAQ</a>
   </div>
-  <a href="#demo" class="nav-cta">Get a Free Demo →</a>
+  <a href="#demo" class="nav-cta">Book a Free Call →</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">⚡ AI-Powered Database Reactivation</div>
-  <h1>Your Old Leads Aren't Dead.<br><span>They're Sleeping.</span></h1>
-  <p>We use AI to text your dormant lead database, qualify them, and book them into your calendar — automatically. You only pay when it works.</p>
-  <a href="#demo" class="hero-cta">See It In Action →</a>
-  <div class="hero-sub">Zero upfront cost. No contracts. Pay per result.</div>
-  <div class="hero-stats">
-    <div class="stat"><div class="stat-num">40–60%</div><div class="stat-label">Average reply rate from dead leads</div></div>
-    <div class="stat"><div class="stat-num">5–15%</div><div class="stat-label">Leads booked into calendar</div></div>
-    <div class="stat"><div class="stat-num">$0</div><div class="stat-label">Upfront cost to get started</div></div>
+  <div class="hero-left">
+    <div class="hero-badge">⚡ AI Database Reactivation</div>
+    <h1>Turn Your Old Leads Into<br><span>Booked Sales Calls</span></h1>
+    <p>Your dormant lead database is sitting on untapped revenue. We use AI to text them, qualify them, and book them into your calendar — automatically. You only pay when it works.</p>
+    <a href="#demo" class="hero-cta">See It In Action →</a>
+    <div class="hero-sub">No upfront cost · No contracts · Pay per booked call</div>
+    <div class="hero-stats">
+      <div><div class="stat-num">40%+</div><div class="stat-label">Average reply rate</div></div>
+      <div><div class="stat-num">$0</div><div class="stat-label">Upfront cost</div></div>
+      <div><div class="stat-num">7 days</div><div class="stat-label">To first results</div></div>
+    </div>
+  </div>
+
+  <!-- SMS MOCKUP -->
+  <div class="sms-card">
+    <div class="sms-header">
+      <div class="sms-avatar">AL</div>
+      <div>
+        <div class="sms-name">Awake Leads AI</div>
+        <div class="sms-sub">SMS · Just now</div>
+      </div>
+    </div>
+    <div class="sms-bubble them"><div class="sms-text">Hey, it's Jordan from Awake Leads. Is this the same Mike that enquired about HVAC service? 👋</div></div>
+    <div class="sms-bubble me"><div class="sms-text">Yeah that's me. Thought you guys forgot about me!</div></div>
+    <div class="sms-bubble them"><div class="sms-text">Ha! Never. We had a slot open up this week — want me to get you booked in?</div></div>
+    <div class="sms-bubble me"><div class="sms-text">Sure, what times do you have?</div></div>
+    <div class="sms-bubble them"><div class="sms-text">I'll send you a link right now 📅</div></div>
+    <div class="sms-result">
+      <div class="sms-result-num">📅 Booked</div>
+      <div class="sms-result-label">Lead converted in under 4 minutes</div>
+    </div>
   </div>
 </section>
 
-<!-- PROBLEM -->
-<section class="problem">
-  <p class="section-label">The Problem</p>
-  <h2 class="section-title">You've Already Paid For These Leads. You're Just Not Using Them.</h2>
-  <p class="section-sub">Most businesses have thousands of leads sitting in their CRM that were never converted. Your sales team gave up. The leads went cold. The money disappeared.</p>
-  <div class="problem-grid">
-    <div class="problem-card">
-      <div class="problem-icon">💸</div>
-      <h3>You spent good money on them</h3>
-      <p>Every lead in your database cost you in ad spend, time, or referral fees. Most of that value is being left on the table.</p>
-    </div>
-    <div class="problem-card">
-      <div class="problem-icon">📞</div>
-      <h3>Cold calling doesn't work anymore</h3>
-      <p>People don't answer unknown numbers. But they DO reply to texts — especially from companies they already enquired with.</p>
-    </div>
-    <div class="problem-card">
-      <div class="problem-icon">⏳</div>
-      <h3>Your team doesn't have time</h3>
-      <p>Following up with 1,000 old leads manually isn't realistic. It falls on the "someday" list that never comes.</p>
-    </div>
-    <div class="problem-card">
-      <div class="problem-icon">🤖</div>
-      <h3>AI can do it for you — 24/7</h3>
-      <p>Our AI texts your leads, holds real conversations, handles objections, and books calls — while you sleep.</p>
-    </div>
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="trust-items">
+    <div class="trust-item"><div class="trust-num">40%+</div><div class="trust-label">Average reply rate from cold leads</div></div>
+    <div class="trust-item"><div class="trust-num">7 days</div><div class="trust-label">From signup to first booked calls</div></div>
+    <div class="trust-item"><div class="trust-num">$0</div><div class="trust-label">Upfront — pay per result only</div></div>
+    <div class="trust-item"><div class="trust-num">A2P</div><div class="trust-label">Compliant SMS — we handle setup</div></div>
   </div>
-</section>
+</div>
 
 <!-- HOW IT WORKS -->
-<section class="how" id="how">
+<section class="section" id="how">
   <p class="section-label">How It Works</p>
   <h2 class="section-title">From Dead Lead to Booked Call in Days</h2>
   <p class="section-sub">We handle everything. You just show up for the calls.</p>
   <div class="steps">
     <div class="step">
       <div class="step-num">1</div>
-      <h3>You Send Us Your List</h3>
-      <p>Export your old leads as a spreadsheet (CSV). That's it. We take it from there.</p>
+      <h3>Send Us Your List</h3>
+      <p>Export your old leads from your CRM as a spreadsheet. Any format works. That's the only thing we need from you.</p>
     </div>
     <div class="step">
       <div class="step-num">2</div>
       <h3>We Build Your AI Agent</h3>
-      <p>We configure an AI agent trained on your business, your offer, and how to handle your customers' objections.</p>
+      <p>We configure an AI agent trained on your business, your offer, and your customers — ready in 3–5 days.</p>
     </div>
     <div class="step">
       <div class="step-num">3</div>
       <h3>AI Texts Every Lead</h3>
-      <p>Your AI agent sends personalized SMS messages and holds real conversations — 24/7, at scale, with zero effort from you.</p>
+      <p>Your AI sends personalized SMS messages, holds real conversations, and handles objections — 24/7.</p>
     </div>
     <div class="step">
       <div class="step-num">4</div>
-      <h3>Leads Book Into Your Calendar</h3>
-      <p>Qualified leads get booked directly into your sales team's calendar. You only pay for confirmed appointments.</p>
+      <h3>Calls Land in Your Calendar</h3>
+      <p>Qualified leads book directly into your calendar. You only pay for confirmed appointments.</p>
     </div>
   </div>
 </section>
 
-<!-- WHAT WE OFFER -->
-<section class="offers" id="pricing">
-  <p class="section-label">Our Services</p>
-  <h2 class="section-title" style="color:#fff">Three Ways We Help You Make More</h2>
-  <p class="section-sub">Start with database reactivation. Then let us do even more.</p>
-  <div class="offer-grid">
-    <div class="offer-card featured">
-      <div class="offer-tag">🔥 Most Popular</div>
-      <h3>Database Reactivation</h3>
-      <p>We take your old, unresponsive leads and text them with our AI. They reply. We qualify them. We book them into your calendar.</p>
-      <div class="offer-result">Avg. 5–15% of dead leads become booked appointments</div>
-    </div>
-    <div class="offer-card">
-      <div class="offer-tag">⚡ Speed to Lead</div>
-      <h3>Instant Lead Follow-Up</h3>
-      <p>New lead comes in from your website or ads? Our AI texts them within minutes — before they call your competitor.</p>
-      <div class="offer-result">Up to 3x more conversions from existing ad spend</div>
-    </div>
-    <div class="offer-card">
-      <div class="offer-tag">🌙 Out of Hours</div>
-      <h3>After-Hours AI Coverage</h3>
-      <p>Leads that come in nights and weekends don't go cold. Our AI nurtures them and has them ready for your team Monday morning.</p>
-      <div class="offer-result">Never lose a lead to timing again</div>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section class="proof" id="results">
+<!-- RESULTS / CASE STUDIES -->
+<section class="section dark" id="results">
   <p class="section-label">Results</p>
-  <h2 class="section-title">Real Outcomes from Dead Lead Lists</h2>
-  <p class="section-sub">These aren't hypotheticals. This is what AI reactivation produces.</p>
+  <h2 class="section-title">Real Businesses. Real Outcomes.</h2>
+  <p class="section-sub">Early results from our database reactivation campaigns.</p>
   <div class="proof-grid">
     <div class="proof-card">
       <div class="stars">★★★★★</div>
-      <p>"We had 935 leads that our sales team had completely given up on. The AI got a 42% reply rate and converted 20% into completed applications. We invoiced over $36,000 from leads we thought were worthless."</p>
-      <div class="proof-author">— Legal Services Partner</div>
+      <p>"We had a list of old HVAC leads our team had given up on. The AI got replies within hours and booked several calls that week. We closed two jobs in the first month."</p>
+      <div class="proof-author">— HVAC Company, North Carolina</div>
     </div>
     <div class="proof-card">
       <div class="stars">★★★★★</div>
-      <p>"319 leads, dialed 10 times each, completely unresponsive. The AI booked 23% of them into calls within a week. Each lead is worth $1,000–$5,000 to us. The owner couldn't believe it."</p>
-      <div class="proof-author">— Debt Consolidation Partner</div>
+      <p>"I was skeptical — these leads were over a year old. But within a few days we had people responding and booking. It paid for itself on the first call we closed."</p>
+      <div class="proof-author">— Home Services Business Owner</div>
     </div>
     <div class="proof-card">
       <div class="stars">★★★★★</div>
-      <p>"We launched our AI on a list of 25 old contacts just to test it. Got a sale in 3 hours. That was the moment I realized this was a completely different kind of lead generation."</p>
-      <div class="proof-author">— Home Services Partner</div>
+      <p>"Setup was fast and the AI sounded completely natural. Our sales team just shows up to calls now — the AI does all the heavy lifting to get them there."</p>
+      <div class="proof-author">— Service Business, Charlotte NC</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVENUE CALCULATOR -->
+<section class="section dark" id="calculator">
+  <p class="section-label">Revenue Calculator</p>
+  <h2 class="section-title">How Much Is Hiding In Your Old Lead List?</h2>
+  <p class="section-sub">Enter your numbers and see the untapped revenue sitting in your existing contacts.</p>
+  <div class="calc-wrap">
+    <div class="calc-inputs">
+      <h3>Your Database</h3>
+      <div class="calc-field">
+        <label>Total contacts in your database</label>
+        <input type="range" id="contacts" min="100" max="5000" step="100" value="500" oninput="calcUpdate()">
+        <div class="val" id="contactsVal">500</div>
+      </div>
+      <div class="calc-field">
+        <label>Average job/deal value ($)</label>
+        <input type="range" id="aov" min="200" max="10000" step="100" value="1500" oninput="calcUpdate()">
+        <div class="val" id="aovVal">$1,500</div>
+      </div>
+      <div class="calc-field">
+        <label>Expected reply rate (our avg: 40%)</label>
+        <input type="range" id="reply" min="10" max="60" step="5" value="40" oninput="calcUpdate()">
+        <div class="val" id="replyVal">40%</div>
+      </div>
+      <div class="calc-field">
+        <label>Your close rate on booked calls (%)</label>
+        <input type="range" id="close" min="5" max="50" step="5" value="20" oninput="calcUpdate()">
+        <div class="val" id="closeVal">20%</div>
+      </div>
+    </div>
+    <div class="calc-output">
+      <h3>Revenue Opportunity</h3>
+      <div class="calc-result-box">
+        <div class="calc-result-row"><span>Contacts texted</span><span id="r1">500</span></div>
+        <div class="calc-result-row"><span>Expected replies</span><span id="r2">200</span></div>
+        <div class="calc-result-row"><span>Calls booked</span><span id="r3">40</span></div>
+        <div class="calc-result-row"><span>Expected closes</span><span id="r4">8</span></div>
+        <div class="calc-result-row">
+          <span style="font-weight:700;color:#fff">Estimated Revenue</span>
+          <span class="calc-big" id="r5">$12,000</span>
+        </div>
+      </div>
+      <a href="#demo" class="calc-cta">Book a Free Call to Unlock This →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <p class="section-label">FAQ</p>
+  <h2 class="section-title">Common Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">What kind of businesses does this work for?</div>
+      <div class="faq-a">Any business with a lead list and a sales process — HVAC, roofing, insurance, solar, mortgage, legal, home services. If your customers need to talk to someone before buying, this works.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How old can the leads be?</div>
+      <div class="faq-a">We've seen results from leads over a year old. As long as they gave you their phone number at some point, they're worth texting. Most businesses are sitting on untouched gold.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What does it cost?</div>
+      <div class="faq-a">Performance-based only — you pay per confirmed booked appointment. Zero upfront. If we don't book calls, you don't pay. Pricing is discussed on the strategy call based on your industry and deal size.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long does setup take?</div>
+      <div class="faq-a">3–5 business days from receiving your lead list. First replies typically come in within 24–48 hours of launch.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this legal? Can you text old leads?</div>
+      <div class="faq-a">Yes — leads who previously submitted their information to your business can be re-contacted. We handle A2P registration, compliance, and opt-out language in every message.</div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-section" id="demo">
-  <h2>See It Work On Your Leads</h2>
-  <p>Book a 15-minute Zoom demo. We'll show you the AI in action — live — handling a real conversation with a cold lead. No pitch. No pressure.</p>
-  <a href="/demo" class="cta-big">Book My Free Demo →</a>
+  <h2>Ready to Wake Up Your Dead Leads?</h2>
+  <p>Book a free 15-minute strategy call. We'll show you the AI live and tell you exactly how many booked calls you can expect from your list.</p>
+  <a href="/demo" class="cta-big">Book My Free Strategy Call →</a>
   <div class="cta-notes">
     <span class="cta-note">Zero upfront cost</span>
-    <span class="cta-note">No long-term contracts</span>
-    <span class="cta-note">Pay only for results</span>
-    <span class="cta-note">Up and running in days</span>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <p class="section-label" style="text-align:center">FAQ</p>
-  <h2 class="section-title" style="text-align:center;margin-bottom:48px">Common Questions</h2>
-  <div class="faq-item">
-    <div class="faq-q">What kind of businesses does this work for?</div>
-    <div class="faq-a">Any business with a sales team and a database of leads that didn't convert. HVAC, solar, roofing, insurance, mortgage, legal, real estate, home renovation — if people have to sell it over the phone or in person, this works.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">How old can the leads be?</div>
-    <div class="faq-a">We've successfully reactivated leads that are 2+ years old. As long as they submitted their info at some point, they're worth texting. Most businesses are sitting on gold they've completely written off.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">What does it cost?</div>
-    <div class="faq-a">We work on a performance basis — you pay per confirmed booked appointment. Zero upfront. If we don't book calls, you don't pay. We discuss specific pricing on the demo call based on your industry and average deal size.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">How long does setup take?</div>
-    <div class="faq-a">Usually 3–5 business days from receiving your lead list to your AI being live and texting contacts. The first replies typically come in within 24–48 hours of launch.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">Is this compliant? Can you text old leads?</div>
-    <div class="faq-a">Yes — leads who previously submitted their information to your business can be re-contacted. Our AI also includes proper opt-out language in every message. We handle A2P registration and compliance setup.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">What if my leads are really old or low quality?</div>
-    <div class="faq-a">That's exactly the point. We work with leads others have written off. If you have a list of 1,000 leads and even 5% book calls, that's 50 new opportunities from a database you weren't using at all.</div>
+    <span class="cta-note">No contracts</span>
+    <span class="cta-note">Pay per result only</span>
+    <span class="cta-note">Live in 7 days</span>
   </div>
 </section>
 
 <footer>
-  <img src="logo.png" alt="Awake Leads" style="height:36px;width:auto;margin-bottom:12px;"><p>© 2026 Awake Leads | awakeleads.com | Charlotte, NC</p>
-  <p style="margin-top:8px">We turn dormant lead databases into booked sales calls using AI.</p>
+  <img src="logo.png" alt="Awake Leads">
+  <p>© 2026 Awake Leads | awakeleads.com | Charlotte, NC</p>
+  <p style="margin-top:6px">AI-powered database reactivation — turn old leads into booked calls.</p>
 </footer>
 
+<script>
+function calcUpdate() {
+  const c = +document.getElementById('contacts').value;
+  const aov = +document.getElementById('aov').value;
+  const reply = +document.getElementById('reply').value / 100;
+  const close = +document.getElementById('close').value / 100;
+
+  document.getElementById('contactsVal').textContent = c.toLocaleString();
+  document.getElementById('aovVal').textContent = '$' + aov.toLocaleString();
+  document.getElementById('replyVal').textContent = Math.round(reply*100) + '%';
+  document.getElementById('closeVal').textContent = Math.round(close*100) + '%';
+
+  const replies = Math.round(c * reply);
+  const booked = Math.round(replies * 0.5); // ~50% of replies book a call
+  const closes = Math.round(booked * close);
+  const revenue = closes * aov;
+
+  document.getElementById('r1').textContent = c.toLocaleString();
+  document.getElementById('r2').textContent = replies.toLocaleString();
+  document.getElementById('r3').textContent = booked.toLocaleString();
+  document.getElementById('r4').textContent = closes.toLocaleString();
+  document.getElementById('r5').textContent = '$' + revenue.toLocaleString();
+}
+calcUpdate();
+</script>
 </body>
 </html>
