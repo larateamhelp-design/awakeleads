@@ -49,6 +49,11 @@ nav{background:#0d0d1a;padding:12px 48px;display:flex;justify-content:space-betw
 .sms-result{margin-top:16px;padding:12px;background:rgba(124,58,237,.15);border-radius:10px;text-align:center;border:1px solid rgba(124,58,237,.3)}
 .sms-result-num{font-size:1.4rem;font-weight:900;color:#c084fc}
 .sms-result-label{font-size:.75rem;color:rgba(255,255,255,.6);margin-top:2px}
+.sms-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.sms-tab{background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.3);color:rgba(255,255,255,.6);border-radius:20px;padding:5px 12px;font-size:.72rem;font-weight:600;cursor:pointer;transition:all .2s}
+.sms-tab.active{background:#7c3aed;border-color:#7c3aed;color:#fff}
+.sms-convo{display:none}
+.sms-convo.active{display:block}
 
 /* TRUST BAR */
 .trust{background:#f8f5ff;padding:32px 24px;text-align:center}
@@ -160,24 +165,70 @@ footer img{height:40px;width:auto;margin-bottom:10px;display:block;margin-left:a
     </div>
   </div>
 
-  <!-- SMS MOCKUP -->
+  <!-- SMS MOCKUP CAROUSEL -->
   <div class="sms-card">
-    <div class="sms-header">
-      <div class="sms-avatar">AL</div>
-      <div>
-        <div class="sms-name">Awake Leads AI</div>
-        <div class="sms-sub">SMS · Just now</div>
-      </div>
+    <div class="sms-tabs">
+      <button class="sms-tab active" onclick="showTab(0)">🔧 HVAC</button>
+      <button class="sms-tab" onclick="showTab(1)">☀️ Solar</button>
+      <button class="sms-tab" onclick="showTab(2)">🏠 Roofing</button>
+      <button class="sms-tab" onclick="showTab(3)">📋 Insurance</button>
     </div>
-    <div class="sms-bubble them"><div class="sms-text">Hey Mike, is this the same Mike that reached out to us a while back? 👋</div></div>
-    <div class="sms-bubble me"><div class="sms-text">Yeah. Already went with someone else though.</div></div>
-    <div class="sms-bubble them"><div class="sms-text">Totally understand! Just curious — were you happy with what you ended up paying, or were you originally hoping to save some money?</div></div>
-    <div class="sms-bubble me"><div class="sms-text">Honestly it cost more than I wanted to spend</div></div>
-    <div class="sms-bubble them"><div class="sms-text">That's exactly why people come back to us 😊 Quick 15 min call — if we can't do better I'll tell you straight. Want me to send a link?</div></div>
-    <div class="sms-bubble me"><div class="sms-text">Sure, send it over</div></div>
-    <div class="sms-result">
-      <div class="sms-result-num">📅 Booked</div>
-      <div class="sms-result-label">"Already have someone" → Booked in 5 mins</div>
+
+    <!-- HVAC -->
+    <div class="sms-convo active" id="tab-0">
+      <div class="sms-header">
+        <div class="sms-avatar">AL</div>
+        <div><div class="sms-name">Awake Leads AI</div><div class="sms-sub">SMS · Just now</div></div>
+      </div>
+      <div class="sms-bubble them"><div class="sms-text">Hey Mike, is this the same Mike that enquired about HVAC service a while back? 👋</div></div>
+      <div class="sms-bubble me"><div class="sms-text">Yeah. Already went with someone else.</div></div>
+      <div class="sms-bubble them"><div class="sms-text">Totally fair! Were you happy with what they charged, or were you hoping to save a bit?</div></div>
+      <div class="sms-bubble me"><div class="sms-text">Honestly it cost more than I expected</div></div>
+      <div class="sms-bubble them"><div class="sms-text">That's exactly why people come back to us 😊 Quick 15 min call — if we can't beat it, I'll say so. Want the link?</div></div>
+      <div class="sms-bubble me"><div class="sms-text">Sure, send it over</div></div>
+      <div class="sms-result"><div class="sms-result-num">📅 Booked</div><div class="sms-result-label">"Already have someone" → Booked in 5 mins</div></div>
+    </div>
+
+    <!-- Solar -->
+    <div class="sms-convo" id="tab-1">
+      <div class="sms-header">
+        <div class="sms-avatar">AL</div>
+        <div><div class="sms-name">Awake Leads AI</div><div class="sms-sub">SMS · Just now</div></div>
+      </div>
+      <div class="sms-bubble them"><div class="sms-text">Hey Sarah, you looked into solar panels a few months back — is that still something on your radar? ☀️</div></div>
+      <div class="sms-bubble me"><div class="sms-text">Not really, felt like it was too expensive</div></div>
+      <div class="sms-bubble them"><div class="sms-text">Prices have actually dropped a lot since then. Most of our customers are saving $150–$300/month. Worth a quick look?</div></div>
+      <div class="sms-bubble me"><div class="sms-text">How quick?</div></div>
+      <div class="sms-bubble them"><div class="sms-text">15 minutes on Zoom, I'll show you the numbers for your home specifically. No pressure at all 🙂</div></div>
+      <div class="sms-bubble me"><div class="sms-text">Ok fine, what times do you have</div></div>
+      <div class="sms-result"><div class="sms-result-num">📅 Booked</div><div class="sms-result-label">"Too expensive" → Booked in 4 mins</div></div>
+    </div>
+
+    <!-- Roofing -->
+    <div class="sms-convo" id="tab-2">
+      <div class="sms-header">
+        <div class="sms-avatar">AL</div>
+        <div><div class="sms-name">Awake Leads AI</div><div class="sms-sub">SMS · Just now</div></div>
+      </div>
+      <div class="sms-bubble them"><div class="sms-text">Hey Tom, you requested a roofing quote from us a while back. Did you ever get that sorted? 🏠</div></div>
+      <div class="sms-bubble me"><div class="sms-text">No I just decided to wait</div></div>
+      <div class="sms-bubble them"><div class="sms-text">Totally get it. Just so you know — storm season's coming and our schedule fills up fast. We're booking free inspections this week if you want to lock one in?</div></div>
+      <div class="sms-bubble me"><div class="sms-text">A free inspection? Yeah sure</div></div>
+      <div class="sms-bubble them"><div class="sms-text">Great! Let me grab you a time — takes 2 mins 👇</div></div>
+      <div class="sms-result"><div class="sms-result-num">📅 Booked</div><div class="sms-result-label">"Just waiting" → Booked in 3 mins</div></div>
+    </div>
+
+    <!-- Insurance -->
+    <div class="sms-convo" id="tab-3">
+      <div class="sms-header">
+        <div class="sms-avatar">AL</div>
+        <div><div class="sms-name">Awake Leads AI</div><div class="sms-sub">SMS · Just now</div></div>
+      </div>
+      <div class="sms-bubble them"><div class="sms-text">Hey James, you got a life insurance quote from us last year — did you end up going with a policy? 👋</div></div>
+      <div class="sms-bubble me"><div class="sms-text">No I just never got around to it</div></div>
+      <div class="sms-bubble them"><div class="sms-text">No worries at all. Rates have actually improved — I could get you an updated quote in about 10 minutes. Want me to send a link?</div></div>
+      <div class="sms-bubble me"><div class="sms-text">Yeah ok why not</div></div>
+      <div class="sms-result"><div class="sms-result-num">📅 Booked</div><div class="sms-result-label">"Never got around to it" → Booked in 3 mins</div></div>
     </div>
   </div>
 </section>
@@ -362,6 +413,12 @@ function calcUpdate() {
   document.getElementById('r5').textContent = '$' + revenue.toLocaleString();
 }
 calcUpdate();
+</script>
+<script>
+function showTab(n) {
+  document.querySelectorAll('.sms-convo').forEach((el,i) => el.classList.toggle('active', i===n));
+  document.querySelectorAll('.sms-tab').forEach((el,i) => el.classList.toggle('active', i===n));
+}
 </script>
 </body>
 </html>
